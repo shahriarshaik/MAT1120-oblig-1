@@ -8,17 +8,28 @@ def sirkel(x,y,r):
     plt.plot(x + r*np.cos(t), y + r*np.sin(t), linewidth = 1)
     plt.axis("equal")
 
-#denne lager matrise
-A = np.array([[-2, 0, 1/2, 1], [-1/4, 1, 1/4, 0], [0, 0, 3, -1], [1/8, 1/8, 1/4, 2]])
+#disse lager matrisene, uncomment den du vil se og comment de du ikke vil se
+#3a
+#A = np.array([[-2, 0, 1/2, 1], [-1/4, 1, 1/4, 0], [0, 0, 3, -1], [1/8, 1/8, 1/4, 2]])
 
-#lager en 4 lang array med 0 inni
+#3b
+#A = np.array([[5, 1, 1], [1, 2, 1], [1, -1, -1]])
+
+#3c
+#A = np.array([[-2, 0, 1/2, 1, 2], [-1/4, 1, 1/4, 0, 5], [0, 0, 3, -1, 7], [1/8, 1/8, 1/4, 2, 4], [4, 3, 8, 6, 4]])
+
+#3d
+A = np.array([[1, 0, 0, 0], [0, 2, 0, 0], [0, 0, 3, 0], [0, 0, 0, 4]])
+
+
+#lager en 4 lang array med 0 inni, denne inneholder d_j
 x = np.zeros(len(A))
 
-#lager en 4 lang array med 0 inni
+#lager en 4 lang array med 0 inni, denne er for radiusen
 r = np.zeros(len(A))
 
-#forloop 
-for y in range(len(A)): 
+#forloop for å finne d_jj
+for y in range(len(A)): #00 01 02 03
     #fyller x med verdier fra arrayen diagonalt
     x[y] =  A[y][y]
     #forloop for å summere
